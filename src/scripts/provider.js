@@ -44,6 +44,7 @@ angular.module('adf.provider', [])
           <span class="sr-only">loading ...</span>\n\
         </div>\n\
       </div>';
+    var customWidgetTemplatePath = null;
 
     // default apply function of widget.edit.apply
     var defaultApplyFunction = function(){
@@ -209,6 +210,23 @@ angular.module('adf.provider', [])
       return this;
     };
 
+    /**
+     * @ngdoc method
+     * @name adf.dashboardProvider#customWidgetTemplatePath
+     * @propertyOf adf.dashboardProvider
+     * @description
+     *
+     * Changes the container template for the widgets
+     *
+     * @param {string} path to the custom widget template
+     *
+     * @returns {Object} self
+     */
+    this.customWidgetTemplatePath = function(templatePath) {
+      customWidgetTemplatePath = templatePath;
+      return this;
+    };
+
    /**
     * @ngdoc service
     * @name adf.dashboard
@@ -233,6 +251,7 @@ angular.module('adf.provider', [])
         structures: structures,
         messageTemplate: messageTemplate,
         loadingTemplate: loadingTemplate,
+        customWidgetTemplatePath: customWidgetTemplatePath,
 
         /**
          * @ngdoc method

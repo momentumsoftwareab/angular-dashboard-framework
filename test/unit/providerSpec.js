@@ -105,4 +105,11 @@ describe('Dashboard Provider tests', function() {
     expect(dashboard.idEquals(1, 1)).toBe(true);
   }));
 
+  it('should set custom widget template url', function() {
+    var customWidgetTemplatePath = '/app/templates/customWidget.html';
+    provider.customWidgetTemplatePath(customWidgetTemplatePath);
+    var dashboard = provider.$get();
+    expect(dashboard.customWidgetTemplatePath).toBe(customWidgetTemplatePath);
+  });
+
 });

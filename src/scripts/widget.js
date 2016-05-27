@@ -238,7 +238,7 @@ angular.module('adf')
       replace: true,
       restrict: 'EA',
       transclude: false,
-      templateUrl: adfTemplatePath + 'widget.html',
+      templateUrl: dashboard.customWidgetTemplatePath ? dashboard.customWidgetTemplatePath : adfTemplatePath + 'widget.html',
       scope: {
         definition: '=',
         col: '=column',
