@@ -276,7 +276,7 @@ angular.module('adf')
         structure: '@',
         name: '@',
         collapsible: '@',
-        editable: '@',
+        editable: '=',
         editMode: '@',
         continuousEditMode: '=',
         maximizable: '@',
@@ -325,7 +325,11 @@ angular.module('adf')
             }
           }
         }, true);
-
+        $scope.$watch('editable', function() {
+            if ($scope.editable) {
+                $scope.options.editable = $scope.editable;
+            }
+        });
         // edit mode
         $scope.editMode = false;
         $scope.editClass = '';
