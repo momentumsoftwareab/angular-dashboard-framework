@@ -530,7 +530,7 @@ angular.module('adf')
         structure: '@',
         name: '@',
         collapsible: '@',
-        editable: '=',
+        editable: '@',
         editMode: '@',
         continuousEditMode: '=',
         maximizable: '@',
@@ -567,9 +567,6 @@ angular.module('adf')
             }
 
             if (model) {
-              if (!model.title){
-                model.title = 'Dashboard';
-              }
               if (!model.titleTemplateUrl) {
                 model.titleTemplateUrl = adfTemplatePath + 'dashboard-title.html';
               }
@@ -581,7 +578,7 @@ angular.module('adf')
         }, true);
         $scope.$watch('editable', function() {
             if ($scope.editable) {
-                $scope.options.editable = $scope.editable;
+                $scope.options.editable = stringToBoolean($scope.editable);
             }
         });
         // edit mode
