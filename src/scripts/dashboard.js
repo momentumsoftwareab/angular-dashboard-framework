@@ -437,7 +437,7 @@ angular.module('adf')
             $scope.createCategories = createCategories;
           }
 
-          var adfAddTemplatePath = adfTemplatePath + 'widget-add.html';
+          var adfAddTemplatePath = dashboard.customWidgetAddTemplatePath ? dashboard.customWidgetAddTemplatePath : adfTemplatePath + 'widget-add.html';
           if(model.addTemplateUrl) {
             adfAddTemplatePath = model.addTemplateUrl;
           }
