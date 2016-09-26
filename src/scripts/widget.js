@@ -253,8 +253,7 @@ angular.module('adf')
         options: '=',
         widgetState: '='
       },
-      controller: function($scope, $element) {
-        var widgetEm = $element.find('.widget');
+      controller: function($scope) {
         $scope.$on('adfDashboardCollapseExpand', function(event, args) {
           $scope.widgetState.isCollapsed = args.collapseExpandStatus;
         });
